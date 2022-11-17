@@ -1,4 +1,11 @@
 table {
-    width: 100%;
-  }
-  
+  width: 100%;
+}
+
+.loading-spinner {
+  padding: 25px;
+  background-color: #EAEAEA;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
