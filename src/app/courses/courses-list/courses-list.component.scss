@@ -1,0 +1,16 @@
+mat-table {
+  overflow: auto;
+  max-height: 600px;
+}
+
+.action-column {
+  flex: 0 0 75px; //Jogar tudo para a direita com 75px de espaço
+}
+
+.action-column-header {
+  flex: 0 0 55px;
+}
+
+.button-icon:hover {
+  transform:scale(1.2);
+}
