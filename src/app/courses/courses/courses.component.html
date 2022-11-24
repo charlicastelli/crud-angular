@@ -7,6 +7,8 @@
     <app-courses-list
       *ngIf="courses$ | async as courses; else loading"
       [courses]="courses"
+      (add)="onAdd()"
+      (edit)="onEdit($event)"
     ></app-courses-list>
 
     <!--Caso o observable retornar falso, exibe o spinner-->

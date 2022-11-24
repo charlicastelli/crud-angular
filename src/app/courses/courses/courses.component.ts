@@ -10,38 +10,39 @@ import { Course } from './../model/course';
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.scss']
+  styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
-
   courses$: Observable<Course[]>;
-  
 
   constructor(
-    private coursesService : CoursesService,
+    private coursesService: CoursesService,
     public dialog: MatDialog,
     private router: Router,
     private route: ActivatedRoute
-    ) { 
+  ) {
     this.courses$ = this.coursesService.list().pipe(
-      catchError(error => {
-        this.onError('Erro ao carregar informações!')
-        return of([])
+      catchError((error) => {
+        this.onError('Erro ao carregar informações!');
+        return of([]);
       })
     );
   }
 
   onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {
-      data: errorMsg
+      data: errorMsg,
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   onAdd() {
     //criando rota. Pega a rota atual e agrega a rota /new
-    this.router.navigate(['new'], {relativeTo: this.route});
+    this.router.navigate(['new'], { relativeTo: this.route });
   }
 
+  onEdit(course: Course) {
+    this.router.navigate(['edit', course._id], {relativeTo: this.route}); 
+  }
 }
