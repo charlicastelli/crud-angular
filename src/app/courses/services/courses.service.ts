@@ -36,6 +36,6 @@ export class CoursesService {
   }
 
   private update(record: Partial<Course>) {
-    return this.httpClient.put<Course>(`${this.API}/${record}`, record).pipe(first());
+    return this.httpClient.put<Course>(`${this.API}/${record._id}`, record).pipe(first());
   }
 }
