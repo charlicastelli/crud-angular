@@ -9,6 +9,7 @@ export class CategoryPipe implements PipeTransform {
     switch (value) {
       case 'front-end': return 'code';
       case 'back-end': return 'computer';
+      case 'mobile': return 'stay_current_portrait';
     }
     return 'code';
   }

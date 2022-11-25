@@ -8,9 +8,18 @@ mat-table {
 }
 
 .action-column-header {
-  flex: 0 0 55px;
+  flex: 0 0 75px;
 }
 
 .button-icon:hover {
   transform:scale(1.2);
+}
+
+mat-header-cell {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.icon-category {
+  padding-left: 15px;
 }
